@@ -1,8 +1,10 @@
-import { memo, Suspense, useCallback, useState } from 'react';
+import { lazy, memo, Suspense, useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Loader from './ui/Loader';
-import Modal from './ui/Modal';
+
+// Lazy load Modal
+const Modal = lazy(() => import('./ui/Modal'));
 
 function MovieCard({ movie }) {
     const [isOpenModal, setIsOpenModal] = useState(false);
